@@ -1,0 +1,68 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: linear-gradient(to bottom, #2980b9, #2c3e50);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+select,
+input[type="number"],
+input[type="button"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#total {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+}

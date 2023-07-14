@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="D:\\Website_Mill\\Sreedev\\Mill_Web\\Mill_Main\\styles.css">
+    <title>Mill - Input Form</title>
+    <style>
+        /* CSS styles for your webpage */
+    </style>
+</head>
+<body>
+    <h1>Mill - Input Form</h1>
+    <form id="millForm">
+        <!-- Form inputs -->
+        <label for="option">Select Option:</label>
+        <select id="option">
+            <option value="python">Python</option>
+            <option value="customtkinter">Custom Tkinter</option>
+            <option value="widgets">Widgets</option>
+            <option value="options">Options</option>
+            <option value="menu">Menu</option>
+            <option value="combobox">Combobox</option>
+            <option value="dropdown">Dropdown</option>
+            <option value="search">Search</option>
+        </select>
+        <br><br>
+        <label for="weight">Enter Weight:</label>
+        <input type="number" id="weight" step="0.01">
+        <br><br>
+        <input type="button" value="Calculate" onclick="calculateTotal()">
+    </form>
+
+    <div id="total"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
