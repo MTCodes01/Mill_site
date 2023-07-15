@@ -30,6 +30,7 @@
     </form>
 
     <div id="total"></div>
+    <div id="error"></div>
 
     <script src="scripts.js"></script>
 
@@ -44,9 +45,15 @@
             xhr.setRequestHeader('Content-Type', 'application/json');
 
             xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    document.getElementById('total').innerHTML = 'Total: ' + response.total;
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        document.getElementById('total').innerHTML = 'Total: ' + response.total;
+                        document.getElementById('error').innerHTML = '';
+                    } else {
+                        document.getElementById('total').innerHTML = '';
+                        document.getElementById('error').innerHTML = 'Error: ' + xhr.statusText;
+                    }
                 }
             };
 
