@@ -35,39 +35,27 @@
     <script src="scripts.js"></script>
 
     <script>
-        // Function to send form data to the server
-        function sendData() {
+        // Function to calculate and display the total
+        function calculateTotal() {
             var option = document.getElementById('option').value;
             var weight = document.getElementById('weight').value;
 
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/api/submit', true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        var response = JSON.parse(xhr.responseText);
-                        document.getElementById('total').innerHTML = 'Total: ' + response.total;
-                        document.getElementById('error').innerHTML = '';
-                    } else {
-                        document.getElementById('total').innerHTML = '';
-                        document.getElementById('error').innerHTML = 'Error: ' + xhr.statusText;
-                    }
-                }
+            var options = {
+                "python": 5.0,
+                "customtkinter": 3.0,
+                "widgets": 2.0,
+                "options": 4.0,
+                "menu": 6.0,
+                "combobox": 7.0,
+                "dropdown": 8.0,
+                "search": 9.0
             };
 
-            var data = JSON.stringify({
-                option: option,
-                weight: weight
-            });
+            var total = options[option] * weight;
 
-            xhr.send(data);
+            document.getElementById('total').innerHTML = 'Total: ' + (total % 1 === 0 ? total.toFixed(0) : total.toFixed(2));
+            document.getElementById('error').innerHTML = '';
         }
-
-        // Add event listener to the Calculate button
-        var calculateButton = document.querySelector('input[type="button"]');
-        calculateButton.addEventListener('click', sendData);
     </script>
 </body>
 </html>
