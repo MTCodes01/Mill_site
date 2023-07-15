@@ -23,6 +23,7 @@ body {
 h1 {
     text-align: center;
     color: #fff;
+    margin-bottom: 20px;
 }
 
 form {
@@ -49,6 +50,7 @@ input[type="button"] {
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-bottom: 10px;
 }
 
 input[type="button"] {
@@ -58,7 +60,6 @@ input[type="button"] {
 }
 
 #total {
-    margin-top: 20px;
     font-weight: bold;
     text-align: center;
     padding: 10px;
